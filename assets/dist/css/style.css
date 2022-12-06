@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap');
+.poppins{
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+}
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.font-header{
+    font-size: 70px;
+}
+.find-here{
+    border-radius: 50px;
+    border: none;
+    border:3px solid rgb(55, 0, 255);
+    padding: 5px 50px 5px 20px;
+    position: relative;
+}
+.color-blue{
+    color:rgb(121, 121, 255) !important;
+}
+.button-touch{
+    border:none;
+    padding: 5px;
+    background: rgb(67, 54, 255);
+    border-radius: 50px;
+    padding: 5px 20px;
+    color: white;
+    border: 3px solid rgb(67, 54, 255);
+    position: absolute;
+    right:1px;
+    transition: 0.5s;
+}
+.button-touch:hover{
+    background-color:  rgb(255, 0, 191);
+    border: 3px solid rgb(67, 54, 255);
+    transition: 0.5s;
+}
+.button{
+    padding: 5px 20px;
+    background-color: rgb(67, 54, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 2px solid rgb(0, 238, 255);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: cubic-bezier(.22,2.07,.67,-0.43);
+}
+.button:hover{
+    border: 2px solid rgb(0, 102, 255);
+    color: white;
+    transition: cubic-bezier(.22,2.07,.67,-0.43);;
+}
+
+.btn{
+    padding: 5px 20px!important;
+    border-radius: 50px;
+
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+@media (min-width: 576px)
+{
+    .card-center{
+        display:flex;
+        justify-content: center;
+    }
+
+}
