@@ -20,34 +20,33 @@
         print("$phone <br>");
         print("$password <br>");
 
-        
-    $servername = "mysql.selfmade.ninja";
-    $username = "agritechs";
-    $password = "ZACd6npSuQyU5pN";
-    $dbname = "agritechs_auth";
 
-           // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+        $servername = "mysql.selfmade.ninja";
+        $usernames = "agritechs";
+        $passwords = "ZACd6npSuQyU5pN";
+        $dbname = "agritechs_auth";
 
-    $sql = "INSERT INTO `auth` (`email`, `phone`, `fname`, `password`, `active`)
+        // Create connection
+        $conn = new mysqli($servername, $usernames, $passwords, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "INSERT INTO `auth` (`email`, `phone`, `fname`, `password`, `active`)
     VALUES ('$email_address', '$phone', '$username', '$password', '1');";
-    $error = false;
-    if ($conn->query($sql) === true) {
         $error = false;
-    } else {
-        // echo "Error: " . $sql . "<br>" . $conn->error;
-        $error = $conn->error;
+        if ($conn->query($sql) === true) {
+            $error = false;
+        } else {
+            // echo "Error: " . $sql . "<br>" . $conn->error;
+            $error = $conn->error;
+        }
+
+        $conn->close();
+        return $error;
     }
-
-    $conn->close();
-    return $error;
-}
-?>
+    ?>
 <!-- <?php
-    // signup("agrasdfi","passwasdford","asfemail","12241534");
-?> -->
-
+        // signup("agrasdfi","passwasdford","asfemail","12241534");
+    ?> -->
