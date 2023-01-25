@@ -9,7 +9,7 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['em
     $email = $_POST["email_address"];
     $phone = $_POST["phone"];
     $password = $_POST["password"];
-    $error = signup($fname, $password, $email, $phone);
+    $error = user::signup($fname, $password, $email, $phone);
     $signup = true;
 }
 ?>
