@@ -1,45 +1,23 @@
 <?php load("_header"); ?>
 <?php load("_head"); ?>
-<?php load_title("Create photogram account")?>
+<?php load_title("Login Photogram")?>
 <?php
-
-$signup = false;
-if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['email_address']) and isset($_POST['phone'])) {
-    $fname = $_POST["username"];
-    $email = $_POST["email_address"];
-    $phone = $_POST["phone"];
-    $password = $_POST["password"];
-    $error = user::signup($fname, $password, $email, $phone);
-    $signup = true;
-}
-?>
-
-<?php
-    if ($signup) {
-        if (!$error) {
-            ?>
-<main class="container">
-	<div class="bg-light p-5 rounded mt-3">
-		<h1>Signup Succesfull</h1>
-		<p class="lead">Now you can login from <a href="login.php">here</a>.</p>
-
-	</div>
-</main>
-<?php
-        } else {
-            ?>
-<main class="container">
-	<div class="bg-light p-5 rounded mt-3">
-		<h1>Signup Fail</h1>
-		<p class="lead">Something went wrong, <?=$error?>
-		</p>
-	</div>
-</main>
-<?php
-        }
-    } else {
+    $email = $_POST['email_address'];
+    $password = $_POST['password'];
+    $login_validation = user::login($email, $password);
+    if($login_validation){
+    //    print "Login success you will be redirect shortly or <a>click here</a>";
+        sleep(1);
+        header('Location: index.php');
         ?>
-
+        <!-- <script>
+        window.location.replace("index.php");
+        </script> -->
+        <?php
+    }else{
+        echo "Login with you credentials";
+    }
+?>
 <style>
 	.poppins {
 		font-family: 'Poppins', sans-serif !important;
@@ -122,7 +100,7 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['em
 
 <body class="text-center">
 	<main class="form-signin w-100 m-auto">
-		<form method="post" action="signup.php">
+		<form method="post" action="login.php">
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" stroke="currentColor"
 				stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
 				viewBox="0 0 24 24">
@@ -132,21 +110,10 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['em
 
 			<h1 class="h1 mb-3 fw-normal poppins" style="font-weight: 600 !important; font-size:50px;">Photogram
 			</h1>
-			<h6 class="h5 mb-3 fw-normal poppins">Please create account</h6>
-			<div class="form-floating">
-				<input name="username" type="text" class="form-control" id="floatingInputUsername"
-					placeholder="name@example.com">
-				<label for="floatingInputUsername">Username</label>
-			</div>
-
-			<div class="form-floating">
-				<input name="phone" type="text" class="form-control" id="floatingInputUsername"
-					placeholder="name@example.com">
-				<label for="floatingInputUsername">Phone</label>
-			</div>
+			<h6 class="h5 mb-3 fw-normal poppins">Login with your existing account</h6>
 			<div class="form-floating">
 				<input name="email_address" type="email" class="form-control" id="floatingInput"
-					placeholder="user@example.com">
+					placeholder="user@gmail.com">
 				<label for="floatingInput">Email</label>
 			</div>
 			<div class="form-floating">
@@ -154,12 +121,9 @@ if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['em
 					placeholder="Password">
 				<label for="floatingPassword">Password</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+			<button class="w-100 btn btn-lg btn-primary" type="submit">Start Explore</button>
 		</form>
 	</main>
 </body>
 
 </html>
-<?php
-    }
-?>
