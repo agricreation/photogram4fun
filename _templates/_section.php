@@ -9,10 +9,24 @@
 			</svg>
 			<h1 class="fw-light poppins font-header">Photogram</h1>
 			<p class="lead text-muted roboto color-blue">Freez your momment and save it here</p>
-			<p>
+			<?php if(isset($_SESSION["user"])){
+				$user = $_SESSION["user"];
+				?>
+				<?php echo $user;
+				?>
+				<a href="?logout">
+				<button class="btn btn-danger">Logout</button>
+				</a>
+				<?php
+			}else{
+				?>
+				<p>
 				<a href="login.php" class="btn btn-primary my-2">Login</a>
 				<a href="signup.php" class="btn btn-secondary my-2">Sign up</a>
 			</p>
+			<?php
+			}
+			?>
 		</div>
 	</div>
 </section>

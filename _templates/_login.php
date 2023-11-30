@@ -2,29 +2,26 @@
 <?php load("_head"); ?>
 <?php load_title("Login Photogram")?>
 <?php
+if(isset($_POST['email_address'])){
     $email = $_POST['email_address'];
     $password = $_POST['password'];
-    $login_validation = user::login($email, $password);
+    $login_validation = usersession::authenticate($email, $password);
     if($login_validation){
-    //    print "Login success you will be redirect shortly or <a>click here</a>";
         sleep(1);
         header('Location: index.php');
         ?>
-        <!-- <script>
-        window.location.replace("index.php");
-        </script> -->
         <?php
     }else{
-        echo "Login with you credentials";
+			echo "Please validate your passwords";
     }
+}
+
 ?>
 <style>
 	.poppins {
 		font-family: 'Poppins', sans-serif !important;
 		color: rgb(121, 121, 255) !important;
 	}
-
-
 	.form-signin {
 		max-width: 330px;
 		padding: 15px;
@@ -120,10 +117,34 @@
 				<input name="password" type="password" class="form-control" id="floatingPassword"
 					placeholder="Password">
 				<label for="floatingPassword">Password</label>
+				<input type="text" hidden id="fingerprint" name="fingerprint">
 			</div>
 			<button class="w-100 btn btn-lg btn-primary" type="submit">Start Explore</button>
 		</form>
 	</main>
+
+
+<script>
+  // Initialize the agent at application startup.
+  const fpPromise = import('https://photogram.agricreations.com/photogram-agri/assets/dist/js/fingerprint.js')
+    .then(module => module.default.load()) // Use module.default to access the default export
+
+  // Get the visitor identifier when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId
+      console.log(visitorId);
+	  const id = document.querySelector('#fingerprint');
+	  id.value = visitorId;
+    })
+    .catch(error => {
+      console.error('Error loading FingerprintJS:', error);
+    });
+</script>
+
+
 </body>
 
 </html>

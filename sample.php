@@ -2,14 +2,18 @@
 include "lib/load.php"
 ?>
 
-<?php
-    // $agriMic = new mic();
-    // $agriMic->price = "$100";
-    // $agriMic->name = "Boya";
-    // $agriMic->newPrice("$80");
-    // $agriMic->setName("boya mic");
-    // print("$agriMic->getName()");
-$cookie_name="sample";
-$cookie_value=123;
-setcookie($cookie_name,$cookie_value)
+<pre>
+<?php 
+print_r($_SERVER);
+
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$agent = $_SERVER['HTTP_USER_AGENT'];
+$fingerprint = $_POST['fingerprint'];
+
+$token = md5(rand(0, 9999999) . $ip . $agent . time());
+
+?>
+</pre>
+
 ?>
