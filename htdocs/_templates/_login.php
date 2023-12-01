@@ -125,23 +125,23 @@ if(isset($_POST['email_address'])){
 
 
 <script>
-  // Initialize the agent at application startup.
-  const fpPromise = import('https://photogram.agricreations.com/photogram-agri/assets/dist/js/fingerprint.js')
-    .then(module => module.default.load()) // Use module.default to access the default export
-
-  // Get the visitor identifier when you need it.
-  fpPromise
-    .then(fp => fp.get())
-    .then(result => {
-      // This is the visitor identifier:
-      const visitorId = result.visitorId
-      console.log(visitorId);
-	  const id = document.querySelector('#fingerprint');
-	  id.value = visitorId;
-    })
-    .catch(error => {
-      console.error('Error loading FingerprintJS:', error);
+// Ensure FingerprintJS is loaded
+if (window.FingerprintJS) {
+    // Initialize FingerprintJS
+    FingerprintJS.load().then(fp => {
+        // Get the visitor identifier
+        fp.get().then(result => {
+            // This is the visitor identifier:
+            const visitorId = result.visitorId;
+            console.log(visitorId);
+        }).catch(error => {
+            console.error(error);
+        });
     });
+} else {
+    console.error("FingerprintJS library not loaded");
+}
+
 </script>
 
 
