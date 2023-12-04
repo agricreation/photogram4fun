@@ -2,6 +2,7 @@
 <?php load("_head"); ?>
 <?php load_title("Login Photogram")?>
 <?php
+header("Access-Control-Allow-Origin: *");
 if(isset($_POST['email_address'])){
     $email = $_POST['email_address'];
     $password = $_POST['password'];
@@ -124,26 +125,20 @@ if(isset($_POST['email_address'])){
 	</main>
 
 
-<script>
-// Ensure FingerprintJS is loaded
-if (window.FingerprintJS) {
-    // Initialize FingerprintJS
-    FingerprintJS.load().then(fp => {
-        // Get the visitor identifier
-        fp.get().then(result => {
-            // This is the visitor identifier:
-            const visitorId = result.visitorId;
-            console.log(visitorId);
-        }).catch(error => {
-            console.error(error);
-        });
-    });
-} else {
-    console.error("FingerprintJS library not loaded");
-}
+	<script>
+  // Initialize the agent at application startup.
+  const fpPromise = import('https://photogram.agricreations.com/assets/dist/js/fingerprint.js')	
+    .then(FingerprintJS => FingerprintJS.load())
 
+  // Get the visitor identifier when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      // This is the visitor identifier:
+      const visitorId = result.visitorId
+		$('#fingerprint').val(visitorId);
+    })
 </script>
-
 
 </body>
 
