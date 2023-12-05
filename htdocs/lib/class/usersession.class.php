@@ -21,6 +21,15 @@ class userSession {
         }
     }
 
+    public static function isAuthorised(){ 
+        $isSetSession = Session::isset('user');
+        if (isset($isSetSession)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public static function authenticate($user, $pass)
     {
         $username = user::login($user, $pass);
@@ -47,4 +56,12 @@ class userSession {
             return false;
         }
     }
+
+
+    public static function loadTemplate($page) {
+        {
+            include __DIR__."/../../_templates/$page.php";
+        }
+    }
+
 }

@@ -3,6 +3,6 @@
 ?> 
 
 <?php
-    load("_register")
+    usersession::loadTemplate("_register")
 ?>
 

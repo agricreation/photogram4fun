@@ -10,7 +10,7 @@
 
 <?php
     //load all files from templates
-    ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
@@ -20,12 +20,7 @@ global $__site_config;
 $wapi = new webapi();
 $wapi->initiateSession();
 
-
 print_r($agent);
-    function load($page)
-    {
-        include __DIR__."/../_templates/$page.php";
-    }
     ?>
 
 <?php

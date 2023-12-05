@@ -1,5 +1,5 @@
-<?php load("_header"); ?>
-<?php load("_head"); ?>
+<?php usersession::loadTemplate("_header"); ?>
+<?php usersession::loadTemplate("_head"); ?>
 <?php load_title("Create photogram account")?>
 <?php
 

@@ -15,16 +15,16 @@ print_r($_POST);
 </pre>
 
 <?
-load("_header");
+usersession::loadTemplate("_header");
 ?>
   <?php
     load_title("Photogram")
   ?>
 <?
-load("_section");
+usersession::loadTemplate("_section");
 
 ?>
 
 <?
-load("_cards")
+usersession::loadTemplate("_cards")
 ?>

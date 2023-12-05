@@ -1,5 +1,5 @@
-<?php load("_header"); ?>
-<?php load("_head"); ?>
+<?php usersession::loadTemplate("_header"); ?>
+<?php usersession::loadTemplate("_head"); ?>
 <?php load_title("Login Photogram")?>
 <?php
 header("Access-Control-Allow-Origin: *");
@@ -125,7 +125,7 @@ if(isset($_POST['email_address'])){
 	</main>
 
 
-	<script>
+<script>
   // Initialize the agent at application startup.
   const fpPromise = import('https://photogram.agricreations.com/assets/dist/js/fingerprint.js')	
     .then(FingerprintJS => FingerprintJS.load())
