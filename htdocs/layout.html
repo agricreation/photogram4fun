@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap');
+  </style>
+  <style>
+    *
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Open Sans', sans-serif;
+}
+.container{
+width: 100%;
+margin: 20px auto;
+columns: 4;
+column-gap: 20px;
+padding: 0 10px;
+}
+.box{
+  cursor: pointer;
+  position: relative;
+}
+.container .box
+{
+width: 100%;
+margin-bottom:10px;
+break-inside: avoid;
+}
+.container .box img{
+max-width: 100%;
+border-radius: 20px;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  padding: 10px 0 ;
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  right: 50%;
+opacity: 0;
+  background-color: white;
+  border-radius: 0 100px 100px 0;
+  transition: 0.5s;
+
+}
+.box:hover .logo{
+  opacity: 100%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.logo img{
+  width: 20%;
+  margin-right: 10px;
+  height: auto;
+}
+.box-heading{
+  font-size: 14px;
+        max-height: 3em; /* Set the maximum height for two lines */
+        overflow: hidden;
+}
+.box-heading p{
+  white-space: nowrap;
+}
+.box-like{
+  padding: 20px 0;
+}
+.box-like-heart{
+  display: flex;
+  padding-right: 10px;
+}
+.box-like-hearts{
+  padding-right:10px ;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="box">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+          <div class="d-flex box-like">
+            <div class="box-like-heart">
+              <div class="box-like-hearts">
+              <i class="fa-regular fa-heart fa-xl"></i>
+            </div>
+            <div>
+              <span>1</span>
+            </div></div>
+            <div>
+            <p>5min ago</p>
+            </div>
+            <!-- <i class="fa-solid fa-heart"></i> -->
+          </div>
+          <div class="logo">
+            <img src="https://www.agricreations.com/assets/img/logo.png" alt="">
+            <span>Moovendhan</span>
+          </div>
+          <div class="d-flex box-heading">
+            <span>Title Goes here</span>
+          </div>
+         
+      </div>
+      <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+    </div>
+    <div class="box">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+    </div>
+      <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKUCQ-P1kX44mwn1gutpz9CY1S9l0upEg8TKmv1SvQq_K52hz-w6d2kcnyQUiu_D_rRqXx82WDvtY3zFKBk3vKincmUhfM00uXYEfJvgf_4kdSze_D0C61fwzBovH40iTaljnPa12jUW45tlWX9n6rYd2yaM-o-mC3gJaB-1kRPIYAuPU30tjAUf3iUw/s1600/moovendha%20agricreations%20pubg%20poster%20editing.jpg" alt="">
+      </div>
+        <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+    </div>
+      <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKUCQ-P1kX44mwn1gutpz9CY1S9l0upEg8TKmv1SvQq_K52hz-w6d2kcnyQUiu_D_rRqXx82WDvtY3zFKBk3vKincmUhfM00uXYEfJvgf_4kdSze_D0C61fwzBovH40iTaljnPa12jUW45tlWX9n6rYd2yaM-o-mC3gJaB-1kRPIYAuPU30tjAUf3iUw/s1600/moovendha%20agricreations%20pubg%20poster%20editing.jpg" alt="">
+      </div>
+      <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+      </div>
+      <div class="box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+    </div>
+    <div class="box">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfAh9_ekbO4bONlX4FGRizkzSgsRrA9UrasE5k1Gqk-HDD6n_Jen0t8e_DZH9liuIfR-_8q4Y5_HhYHsT1nx9z-iXGCkhHehyJDne-Ly01Io0uKovgtL0gqrSZonGXmIC4I0gK_V2k8qF_GKxKmJ7WleMjzL-xaZwZXdmafwETPLF6Wcv4HpRWvLGRjQ/s1600/agri%20dp.jpg" alt="">
+    </div>
+    <div class="box">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCH-3_SqeMgUiRQagUmhCpKgwbecRKlEdT65Rps63k0Vm48wXtUY6f4kS1uJZXOs24FLdBtUf5jezktSPOQEH9pQlHw6bCkRm23D5uoV-As2-Z3yfCqx2UgeXy_qeB9_GWMWpZucG4F8GEzck06DitIvaF3PCcRV3QP3y8RoKm-BAnLni5QUa4FrZ82mcF/s16000/moovendhan_service_webdev.png" alt="">
+  </div>
+    </div>
+</body>
+</html>

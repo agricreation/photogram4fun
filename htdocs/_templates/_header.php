@@ -9,6 +9,10 @@
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/dist/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap');
+  </style>
 
 
 </head>
@@ -24,7 +28,19 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="mailto:agricreationofficial@proton.me" class="text-white">Email me</a></li>
+            <li><a href="mailto:agricreationofficial@proton.me" class="text-white">
+              <?php
+                  if(usersession::isAuthorised() == true){
+              ?>
+              <?php
+              ?>
+              <a class="text-danger" href="?logout">
+             Logout
+              </a>
+				<?php
+			}
+            ?>
+            </a></li>
           </ul>
         </div>
       </div>

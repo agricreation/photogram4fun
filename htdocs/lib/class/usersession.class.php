@@ -22,8 +22,8 @@ class userSession {
     }
 
     public static function isAuthorised(){ 
-        $isSetSession = Session::isset('user');
-        if (isset($isSetSession)) {
+        // $isSetSession = Session::isset('user');
+        if (Session::isset('user')) {
             return true;
         }else{
             return false;

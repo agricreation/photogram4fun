@@ -9,14 +9,25 @@
 			</svg>
 			<h1 class="fw-light poppins font-header">Photogram</h1>
 			<p class="lead text-muted roboto color-blue">Freez your momment and save it here</p>
-			<?php if(isset($_SESSION["user"])){
-				$user = $_SESSION["user"];
+			<?php if(usersession::isAuthorised() == true){
+				$user = session::get("user");
+				echo $user;
 				?>
-				<?php echo $user;
-				?>
-				<a href="?logout">
-				<button class="btn btn-danger">Logout</button>
-				</a>
+				<form action="/">
+					<div>
+					<div class="form-floating">
+						<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+						<label for="floatingTextarea2">Write what you think</label>
+					</div>
+					</div>
+						<div class="mb-3">
+							<input class="form-control" type="file" id="formFile">
+						</div>
+						<div>
+							<input type="submit" class="btn btn-success" value="Share your memories">
+						</div>
+				</form>
+
 				<?php
 			}else{
 				?>

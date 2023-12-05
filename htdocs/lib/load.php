@@ -5,9 +5,9 @@
     include_once __DIR__."/class/session.class.php";
     include_once __DIR__."/class/usersession.class.php";
     include_once __DIR__."/class/webapi.class.php";
+    include_once __DIR__."/class/post.class.php";
+
     ?>
-
-
 <?php
     //load all files from templates
 ini_set('display_errors', 1);
@@ -31,7 +31,6 @@ print_r($agent);
     {
         print "<title>$title</title>";
     }
-
     function get_config($key)
         {
     global $__site_config;
@@ -42,5 +41,4 @@ print_r($agent);
         return null;
     }
 }
-
     ?>

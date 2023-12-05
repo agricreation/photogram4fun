@@ -3,5 +3,6 @@
 	"db_username": "agritechs",
 	"db_password": "",
 	"db_name": "agritechs_auth",
-	"base_path": "/"
+	"base_path": "/",
+	"upload_path": "/home/moovendhan/photogram_uploads/"
 }
