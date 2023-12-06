@@ -1,6 +1,15 @@
-<section class="py-1 text-center container">
-	<div class="row py-lg-5">
-		<div class="col-lg-6 col-md-8 mx-auto">
+<div class="accordion" id="accordionExample">
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       Share your memories
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      	<section class="py-1 text-center container">
+			<div class="row py-lg-5">
+				<div class="col-lg-6 col-md-8 mx-auto">
 			<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" stroke="currentColor"
 				stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2"
 				viewBox="0 0 24 24">
@@ -27,7 +36,6 @@
 							<input type="submit" class="btn btn-success" value="Share your memories">
 						</div>
 				</form>
-
 				<?php
 			}else{
 				?>
@@ -40,4 +48,11 @@
 			?>
 		</div>
 	</div>
-</section>
+		</section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

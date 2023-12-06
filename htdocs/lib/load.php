@@ -20,7 +20,7 @@ global $__site_config;
 $wapi = new webapi();
 $wapi->initiateSession();
 
-print_r($agent);
+// print_r($agent);
     ?>
 
 <?php

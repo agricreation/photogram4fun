@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,54 +12,236 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins&display=swap');
   </style>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+body {
+  background: #f6f6f6;
+}
+* a {
+  text-decoration: none;
+  color: #151515;
+}
+.pinterest {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.938rem;
+}
+.sticky{
+  animation-name: slide-bottom;
+  animation-duration: 2s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 666;
+}
 
+@-webkit-keyframes slide-bottom {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 0;
+  }
+}
 
+.left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.left .logos {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left .logos:hover {
+  background-color: #e5e5e5;
+}
+.left .logos i {
+  color: #e60022;
+  font-size: 24px;
+}
+.left .home {
+  font-weight: bold;
+  height: 3rem;
+  color: #fff;
+  padding: 1rem;
+  background-color: #151515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.563rem;
+}
+.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar .img {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar .img img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.search {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  border-radius: 25px;
+  overflow: hidden;
+  background: #e3e3e3;
+}
+.search:hover {
+  background: #c9c9c9;
+}
+.search i {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #767676;
+}
+.search input {
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  padding-right: 1rem;
+}
+.search input::placeholder {
+  color: #767676;
+  font-size: 1rem;
+}
+.right {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: flex-end;
+
+}
+.items {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.items:hover {
+  background: #e5e5e5;
+}
+.items i {
+  font-size: 1rem;
+  color: #767676;
+}
+.items-down {
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+}
+.items-down:hover {
+  background: #e5e5e5;
+}
+.right:hover .profile{
+  display: block;
+}
+.profile{
+  position: absolute;
+  top: 100%;
+  padding: 5px;
+  width: 200px;
+  background-color: #f6f6f6;
+  padding: 10px;
+  z-index: 111;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  display: none;
+}
+.profile li{
+  list-style: none;
+}
+  </style>
 </head>
 <body>
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Photogram 📲</h4>
-          <p class="text-muted">Here you can connect and intract with your friends </p>
+<header class="pinterests">
+    <div class="pinterest">
+      <div class="left">
+        <a href="#" class="logos"><i class="fab fa-pinterest"></i></a>
+        <a href="#" class="home">Photogram</a>
+      </div>
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="search" name="" placeholder="Scarch something intresting" id="">
+      </div>
+      <div class="right">
+        <div class="profile">
+          <div>Moovendhan</div>
+          <div> <?php if(usersession::isAuthorised() == true){?>
+          <a class="text-danger" href="?logout">logout</a><?php }else{?>
+            <a class="text-primary" href="?logout">Login</a><?php
+          } ?> </div>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="mailto:agricreationofficial@proton.me" class="text-white">
-              <?php
-                  if(usersession::isAuthorised() == true){
-              ?>
-              <?php
-              ?>
-              <a class="text-danger" href="?logout">
-             Logout
-              </a>
-				<?php
-			}
-            ?>
-            </a></li>
-          </ul>
-        </div>
+        <a href="#" class="items"><i class="fas fa-bell"></i></a>
+        <a href="#" class="items"><i class="far fa-comment-dots"></i></a>
+        <a href="#" class="avatar">
+          <div class="img"><img src="https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1488&q=80" alt=""></div>
+        </a>
+        <a href="#" class="items-down"><i class="fas fa-chevron-down"></i>
+      </a>
       </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="index.php" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Freez your album</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
 </header>
 
-  <!--Javascript-->
-  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="sidebars.js"></script>
--->
+<script>
+  const navbar = document.querySelector('.pinterests');
+let tops = navbar.offsetTop;
+function stickynavbar() {
+  console.log(`tops ${tops+10}`);
+  console.log(`scrool ${window.scrollY}`);
+  if (window.scrollY >= tops+50) {    
+    navbar.classList.add('sticky');
+  } else {
+    navbar.classList.remove('sticky');    
+  }
+}
+window.addEventListener('scroll', stickynavbar);
+</script>
 
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>

@@ -2,21 +2,20 @@
 <?php usersession::loadTemplate("_head"); ?>
 <?php load_title("Login Photogram")?>
 <?php
-header("Access-Control-Allow-Origin: *");
 if(isset($_POST['email_address'])){
     $email = $_POST['email_address'];
     $password = $_POST['password'];
     $login_validation = usersession::authenticate($email, $password);
     if($login_validation){
         sleep(1);
-        header('Location: index.php');
+        // header('Location: index.php');
         ?>
+		<script>window.location.href = "index"; </script>
         <?php
     }else{
 			echo "Please validate your passwords";
     }
 }
-
 ?>
 <style>
 	.poppins {
@@ -95,7 +94,6 @@ if(isset($_POST['email_address'])){
 		-webkit-overflow-scrolling: touch;
 	}
 </style>
-
 <body class="text-center">
 	<main class="form-signin w-100 m-auto">
 		<form method="post" action="login.php">
@@ -132,7 +130,6 @@ if(isset($_POST['email_address'])){
 
   // Get the visitor identifier when you need it.
   fpPromise
-    .then(fp => fp.get())
     .then(result => {
       // This is the visitor identifier:
       const visitorId = result.visitorId

@@ -4,15 +4,10 @@
 <?
 if(isset($_GET['logout'])){
   session::destroy();
+  header("Location: index.php");
 }
 ?>
-<pre>
-<?php 
-print_r($_SESSION);
-print_r($_GET);
-print_r($_POST);
-?>
-</pre>
+
 
 <?
 usersession::loadTemplate("_header");
