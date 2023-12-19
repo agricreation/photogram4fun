@@ -203,7 +203,7 @@ body {
 <header class="pinterests">
     <div class="pinterest">
       <div class="left">
-        <a href="#" class="logos"><i class="fab fa-pinterest"></i></a>
+        <a href="#" class="logos"><i class="fa-solid fa-camera"></i></a>
         <a href="#" class="home">Photogram</a>
       </div>
       <div class="search">

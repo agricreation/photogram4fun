@@ -124,7 +124,7 @@
           </div>
         </div>
         <div>
-          <p>5min ago</p>
+          <!-- <p>5min ago</p> -->
         </div>
         <!-- <i class="fa-solid fa-heart"></i> -->
       </div>
@@ -134,6 +134,12 @@
       </div>
       <div class="d-flex box-heading">
         <span><?php echo $post['post_text'] ?></span>
+        <?php if($post['owner'] == session::get("user")){
+          echo '<div class="box-like-hearts">
+                    <i class="fa-solid fa-trash"></i>
+              </div>';
+        }
+       ?>
       </div>
 
     </div>
