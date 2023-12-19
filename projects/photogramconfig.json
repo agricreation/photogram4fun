@@ -1,7 +1,7 @@
 {
 	"db_server": "mysql.selfmade.ninja",
 	"db_username": "agritechs",
-	"db_password": "",
+	"db_password": "ZACd6npSuQyU5pN",
 	"db_name": "agritechs_auth",
 	"base_path": "/",
 	"upload_path": "/home/moovendhan/photogram_uploads/"

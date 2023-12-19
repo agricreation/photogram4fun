@@ -215,7 +215,7 @@ body {
           <div>Moovendhan</div>
           <div> <?php if(usersession::isAuthorised() == true){?>
           <a class="text-danger" href="?logout">logout</a><?php }else{?>
-            <a class="text-primary" href="?logout">Login</a><?php
+            <a class="text-primary" href="login">Login</a><?php
           } ?> </div>
         </div>
         <a href="#" class="items"><i class="fas fa-bell"></i></a>

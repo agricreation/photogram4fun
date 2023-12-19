@@ -1,13 +1,6 @@
 <?php
-
-// include_once __DIR__ . "/../traits/SQLGetterSetter.trait.php";
-
-// use Carbon\Carbon; //including a namespace
-
 class Post
 {
-    // use SQLGetterSetter; //including a trait
-
     public $id;
     public $conn;
     public $table;
@@ -15,7 +8,7 @@ class Post
     public static function registerPost($text, $image_tmp)
     {
         if (is_file($image_tmp) and exif_imagetype($image_tmp) !== false) {
-            $author = Session::getUser()->getEmail();
+            $author = session::get("user");
             $image_name = md5($author.time()) . image_type_to_extension(exif_imagetype($image_tmp));
             $image_path = get_config('upload_path') . $image_name;
             if (move_uploaded_file($image_tmp, $image_path)) {
