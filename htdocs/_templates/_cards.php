@@ -112,12 +112,14 @@
   <div class="containers">
   <?php $posts = Post::getAllPosts();
   foreach ($posts as $post) { ?>
-    <div class="box">
+    <div class="box doubleTapLike">
       <img src="<?php echo $post['image_uri'] ?>" alt="">
       <div class="d-flex box-like">
         <div class="box-like-heart">
           <div class="box-like-hearts">
-            <i class="fa-regular fa-heart fa-xl"></i>
+
+            <i class="heartIcon fa-regular fa-heart fa-xl" style="color: #d20fd1;"></i>
+
           </div>
           <div>
             <span>1</span>
@@ -145,3 +147,10 @@
     </div>
     <?php } ?>
   </div>
+  <script>
+    $(document).ready(function() {
+        $('.heartIcon').click(function() {
+            $(this).toggleClass('fa-regular fa-solid');
+        });
+    });
+</script>
