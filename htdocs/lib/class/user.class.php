@@ -21,7 +21,7 @@
         $this->conn = db::makeConnection();
         $this->username = $username;
         $this->id = null;
-        $sql = "SELECT `id` FROM `auth` WHERE `fname`= '$username' LIMIT 1";
+        $sql = "SELECT `id` FROM `auth` WHERE `first_name`= '$username' LIMIT 1";
         $result = $this->conn->query($sql);
         if ($result->num_rows) {
             $row = $result->fetch_assoc();
@@ -64,7 +64,7 @@
         {
             $password = password_hash($password, PASSWORD_BCRYPT);
             $conn = db::makeConnection();
-            $sql = "INSERT INTO `auth` (`email`, `phone`, `fname`, `password`, `active`)
+            $sql = "INSERT INTO `auth` (`email_address`, `phone_number`, `first_name`, `password`, `active`)
             VALUES ('$email_address', '$phone', '$username', '$password', '1');";
             $error = false;
             if ($conn->query($sql) === true) {
@@ -80,12 +80,12 @@
         public static function login($email_address, $password)
         {
             $conn = db::makeConnection();
-            $query = "SELECT * FROM `auth` WHERE `email` = '$email_address'";
+            $query = "SELECT * FROM `auth` WHERE `email_address` = '$email_address'";
             $result = $conn->query($query);
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
                 if (password_verify($password, $row['password'])) {
-                    return $row['fname'];
+                    return $row['first_name'];
                 } else {
                     return false;
                 }
